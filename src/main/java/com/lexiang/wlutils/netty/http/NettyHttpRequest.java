@@ -47,7 +47,6 @@ public class NettyHttpRequest {
      */
     public static Map<String, Object>  getsParam(FullHttpRequest request){
         Map<String, Object> paramMap = new HashMap<>();
-
         QueryStringDecoder decoder = new QueryStringDecoder(request.uri());
         decoder.parameters().forEach((key, value) -> paramMap.put(key, value.get(0)));
         return paramMap;
